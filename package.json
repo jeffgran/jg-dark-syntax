@@ -1,0 +1,16 @@
+{
+  "name": "jg-dark-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Dark syntax theme with the colors I'm used to.",
+  "keywords": [
+    "syntax",
+    "theme",
+    "dark"
+  ],
+  "repository": "https://github.com/jeffgran/jg-dark-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
