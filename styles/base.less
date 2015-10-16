@@ -92,12 +92,18 @@ atom-text-editor .search-results .marker.current-result .region,
   &.operator {
     color: @syntax-text-color;
     
-    &.assignment {
+    &.assignment,
+    &.js /* js doesn't distinguish assignment */ {
       color: @cyan;
       
       &.augmented {
         color: @turquoise;
       }
+    }
+    
+    &.new.js {
+      color: @blue;
+      font-weight: bold;
     }
     
     &.logical {
@@ -123,6 +129,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .storage {
   color: @blue;
+  font-weight: bold;
 }
 
 .constant {
@@ -133,7 +140,8 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.numeric {
-    color: @red;
+    color: @dark-pink;
+    font-weight: bold;
   }
   
   &.language {
@@ -164,6 +172,11 @@ atom-text-editor .search-results .marker.current-result .region,
   &.parameter.function {
     color: @yellow;
   }
+  
+  
+  &.language.js { /* `this` */
+    color: @red;
+  }
 }
 
 .invalid.illegal {
@@ -180,6 +193,33 @@ atom-text-editor .search-results .marker.current-result .region,
 
     .source.ruby.embedded {
       color: @orange;
+    }
+    
+    .character-class {
+      color: @orange;
+      
+      &.punctuation {
+        color: @red;
+      }
+    }
+    
+    .punctuation.definition.begin,
+    .punctuation.section,
+    .punctuation.definition.end {
+      color: @dark-orange;
+    }
+    
+    
+    .operator {
+      &.negation {
+        color: @red;
+      }
+      &.quantifier {
+        color: @dark-orange;
+      }
+    }
+    .anchor {
+      color: @dark-orange;
     }
   }
   
@@ -275,6 +315,9 @@ atom-text-editor .search-results .marker.current-result .region,
   &.name.tag {
     color: @turquoise;
     font-weight: bold;
+    &.yaml {
+      color: @red;
+    }
   }
 
   &.other.attribute-name {
