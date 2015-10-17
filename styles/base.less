@@ -66,21 +66,6 @@ atom-text-editor .search-results .marker.current-result .region,
   color: @light-gray;
 }
 
-.entity {
-  &.name.type {
-    color: @green;
-  }
-
-  &.other.inherited-class {
-    color: @cyan;
-  }
-  
-  &.name.function {
-    color: @blue;
-    font-weight: bold;
-  }
-}
-
 .keyword {
   color: @blue;
 
@@ -130,6 +115,11 @@ atom-text-editor .search-results .marker.current-result .region,
 .storage {
   color: @blue;
   font-weight: bold;
+  
+  &.type.class.todo {
+    font-weight: normal;
+    color: @cyan;
+  }
 }
 
 .constant {
@@ -187,6 +177,9 @@ atom-text-editor .search-results .marker.current-result .region,
 .string {
   color: @orange;
 
+  &.unquoted { /* javascript object keys are unquoted strings */
+    color: @red;
+  }
 
   &.regexp {
     color: @orange;
@@ -297,10 +290,23 @@ atom-text-editor .search-results .marker.current-result .region,
       color: @blue;
     }
   }
+  &.type.object {
+    color: @cyan;
+  }
 }
 
 .entity {
-  &.name.function {
+  &.name.type {
+    color: @green;
+  }
+
+  &.other.inherited-class {
+    color: @cyan;
+  }
+  
+  &.name.function,
+  &.name.accessor {
+    font-weight: bold;
     color: @turquoise;
   }
 
@@ -330,6 +336,11 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .meta {
+  
+  &.braces,
+  &.brace {
+    color: @syntax-punctuation-color;
+  }
   &.class {
     color: @light-orange;
   }
